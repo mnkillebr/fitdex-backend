@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_05_14_211826) do
 
   create_table "workout_cards", force: :cascade do |t|
     t.string "name"
+    t.string "img"
     t.integer "time"
     t.string "exercises"
     t.string "level"

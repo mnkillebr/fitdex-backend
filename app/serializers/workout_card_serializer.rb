@@ -1,4 +1,4 @@
 class WorkoutCardSerializer < ActiveModel::Serializer
-  attributes :id, :name, :time, :level
+  attributes :id, :img, :name, :time, :level
   has_many :exercises
 end

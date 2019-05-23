@@ -29,4 +29,5 @@ plank = Exercise.create(name: 'Plank', difficulty: 'Medium', media: 'https://ali
 side_plank = Exercise.create(name: 'Side Plank', difficulty: 'Medium', media: 'https://irongrif.com/uploads/exercise/image/63/show_img_side-plank-core-abs-oblique-exercise.jpg', description: '1. Side Plank', muscles: 'Core')
 kneeling_pallof_press = Exercise.create(name: 'Kneeling Pallof Press', difficulty: 'Easy', media: 'https://blog.myfitnesspal.com/wp-content/uploads/2019/01/file-1-4.gif', description: '1. Kneel 2. Press', muscles: 'Core')
 
-squat_party = WorkoutCard.create(name: 'Squat Party', time: 10, level: 'intermediate', exercises: [air_squat, goblet_squat, barbell_squat])
+squat_party = WorkoutCard.create(name: 'Squat Party', img: 'https://www.catalystathletics.com/articles/images/2016-12-05-dialSquat.jpg', time: 10, level: 'Intermediate', exercises: [air_squat, goblet_squat, barbell_squat])
+hand_warmer = WorkoutCard.create(name: 'Hand Warmer', img: 'https://improveyourgrip.net/wp-content/uploads/2017/05/gym-chalk-applied-to-hands.png', time: 60, level: 'Advanced', exercises: [pike_hold, pike_pushup, handstand_pushup])
