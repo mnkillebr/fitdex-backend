@@ -12,7 +12,12 @@ skip_before_action :authorized#, only: [:index]
   end
 
   def destroy
+    exercise_ids = request.headers['ExerciseIds'].split(',')
+    workouts = exercise_ids.map do |id|
+      Workout.where(exercise_id: id, workout_id: params[:id])
+    end
     @workout_card = WorkoutCard.find(params[:id])
+    @workout_card.exercises.destroy_all
     @workout_card.destroy
   end
 
