@@ -1,5 +1,7 @@
 UserWorkoutCard.destroy_all
 Workout.destroy_all
+Event.destroy_all
+Calendar.destroy_all
 User.destroy_all
 Exercise.destroy_all
 WorkoutCard.destroy_all
@@ -33,3 +35,5 @@ squat_party = WorkoutCard.create(name: 'Squat Party', img: 'https://www.catalyst
 hand_warmer = WorkoutCard.create(name: 'Hand Warmer', img: 'https://improveyourgrip.net/wp-content/uploads/2017/05/gym-chalk-applied-to-hands.png', time: 60, level: 'Advanced', exercises: [pike_hold, pike_pushup, handstand_pushup])
 
 matt = User.create(name: 'Matt Mattheson', email: 'matt@matt.com', password: 'pass', height: 72, weight: 190, birthdate: '1988-05-02')
+
+matt_calendar = Calendar.create(user_id: 1)

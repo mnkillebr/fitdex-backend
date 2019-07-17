@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_14_211826) do
+ActiveRecord::Schema.define(version: 2019_07_16_155814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calendars", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_calendars_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "calendar_id"
+    t.string "title"
+    t.datetime "start"
+    t.datetime "end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["calendar_id"], name: "index_events_on_calendar_id"
+  end
 
   create_table "exercises", force: :cascade do |t|
     t.string "name"
@@ -64,6 +81,8 @@ ActiveRecord::Schema.define(version: 2019_05_14_211826) do
     t.index ["workout_card_id"], name: "index_workouts_on_workout_card_id"
   end
 
+  add_foreign_key "calendars", "users"
+  add_foreign_key "events", "calendars"
   add_foreign_key "user_workout_cards", "users"
   add_foreign_key "user_workout_cards", "workout_cards"
   add_foreign_key "workouts", "exercises"

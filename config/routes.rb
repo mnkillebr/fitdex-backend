@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :exercises, only: [:index, :show, :create, :destroy]
       resources :workout_cards, only: [:index, :create, :show, :update, :destroy]
       resources :workouts, only: [:index, :create, :destroy]
+      resources :events, only: [:index, :create, :destroy]
       post '/login', to: 'auth#create'
     end
   end
